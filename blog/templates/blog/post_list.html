@@ -6,11 +6,12 @@
         <div>
             <h1><a href="">Luckerbai Blog</a></h1>
         </div>
-        <div>
-            <p>published: 11.05.2018, 10:42</p>
-            <h2><a href="">My First post</a></h2>
-            <p>This will be custom content</p>
-        </div>
-    
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date  }}</p>
+                <h1><a href="">{{ post.title }}</a></h1>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
     </body>
 </html>
